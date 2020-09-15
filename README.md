@@ -14,3 +14,9 @@ Comment=suckless dwm
 Exec=/home/michael/scripts/startdwm
 Type=Application
 ```
+
+## Patches
+- [center](https://dwm.suckless.org/patches/center/)
+- [fakefullscreen](https://dwm.suckless.org/patches/fakefullscreen/)
+- [fullgaps](https://dwm.suckless.org/patches/fullgaps/)
+- [pertag](https://dwm.suckless.org/patches/pertag/)
