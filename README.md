@@ -20,3 +20,4 @@ Type=Application
 - [fakefullscreen](https://dwm.suckless.org/patches/fakefullscreen/)
 - [fullgaps](https://dwm.suckless.org/patches/fullgaps/)
 - [pertag](https://dwm.suckless.org/patches/pertag/)
+- [movestack](https://dwm.suckless.org/patches/movestack/)
