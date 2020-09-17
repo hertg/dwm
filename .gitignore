@@ -3,3 +3,4 @@ dwm.o
 drw.o
 util.o
 config.h
+.vscode/
