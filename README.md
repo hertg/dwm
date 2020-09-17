@@ -21,3 +21,4 @@ Type=Application
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
 - [pertag](https://dwm.suckless.org/patches/pertag/)
 - [movestack](https://dwm.suckless.org/patches/movestack/)
+- [Xresources](https://dwm.suckless.org/patches/xresources/)
