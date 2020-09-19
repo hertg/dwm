@@ -22,3 +22,8 @@ Type=Application
 - [pertag](https://dwm.suckless.org/patches/pertag/)
 - [movestack](https://dwm.suckless.org/patches/movestack/)
 - [Xresources](https://dwm.suckless.org/patches/xresources/)
+- [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
+
+## Attribution
+Some parts of the source code, mostly the vanitygaps patches for the custom layouts, 
+have been copied from [Luke Smith's dwm](https://github.com/LukeSmithxyz/dwm). 
