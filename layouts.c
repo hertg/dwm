@@ -207,6 +207,9 @@ centeredmaster(Monitor *m)
 	int mn = 0, ln = 0, rn = 0; // number of clients in master, left and right area
 	Client *c;
 
+	int max_window_width = 1920;
+	int mww = m->ww;
+
 	getgaps(m, &oh, &ov, &ih, &iv, &n);
 
 	if (n == 0)
@@ -223,6 +226,13 @@ centeredmaster(Monitor *m)
 
 	/* initialize areas */
 	mx = m->wx + ov;
+
+	// check if all windows with max-size fill screen
+	if (n * max_window_width < m->ww) {
+		// if the windows don't fill the screen, center them and shrink the wrapper-width
+		mx = (MAX(m->ww - (n * max_window_width), 0) / 2) + ov;
+		mww = n * max_window_width;
+	} 
 	my = m->wy + oh;
 
 	// stack master horizontally
@@ -231,22 +241,23 @@ centeredmaster(Monitor *m)
 
 	// stack master vertically
 	mh = m->wh - 2*oh;
-	mw = m->ww - 2*ov - iv * ((!m->nmaster ? n : MIN(n, m->nmaster)) - 1);
+	mw = mww - 2*ov - iv * ((!m->nmaster ? n : MIN(n, m->nmaster)) - 1);
 
 	lh = m->wh - 2*oh - ih * (((n - m->nmaster) / 2) - 1);
 	rh = m->wh - 2*oh - ih * (((n - m->nmaster) / 2) - ((n - m->nmaster) % 2 ? 0 : 1));
 
+	// if a stack exists
 	if (m->nmaster && n > m->nmaster) {
 		/* go mfact box in the center if more than nmaster clients */
 		if (n - m->nmaster > 1) {
 			/* ||<-S->|<---M--->|<-S->|| */
-			mw = (m->ww - 2*ov - 2*iv) * m->mfact;
-			lw = (m->ww - mw - 2*ov - 2*iv) / 2;
+			mw = (mww - 2*ov - 2*iv) * m->mfact;
+			lw = (mww - mw - 2*ov - 2*iv) / 2;
 			mx += lw + iv;
 		} else {
 			/* ||<---M--->|<-S->|| */
 			mw = (mw - iv) * m->mfact;
-			lw = m->ww - mw - iv - 2*ov;
+			lw = mww - mw - iv - 2*ov;
 		}
 		rw = lw;
 		lx = m->wx + ov;
