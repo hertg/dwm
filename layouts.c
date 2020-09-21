@@ -224,8 +224,15 @@ centeredmaster(Monitor *m)
 	/* initialize areas */
 	mx = m->wx + ov;
 	my = m->wy + oh;
-	mh = m->wh - 2*oh - ih * ((!m->nmaster ? n : MIN(n, m->nmaster)) - 1);
-	mw = m->ww - 2*ov;
+
+	// stack master horizontally
+	//mh = m->wh - 2*oh - ih * ((!m->nmaster ? n : MIN(n, m->nmaster)) - 1);
+	//mw = m->ww - 2*ov;
+
+	// stack master vertically
+	mh = m->wh - 2*oh;
+	mw = m->ww - 2*ov - iv * ((!m->nmaster ? n : MIN(n, m->nmaster)) - 1);
+
 	lh = m->wh - 2*oh - ih * (((n - m->nmaster) / 2) - 1);
 	rh = m->wh - 2*oh - ih * (((n - m->nmaster) / 2) - ((n - m->nmaster) % 2 ? 0 : 1));
 
@@ -250,9 +257,13 @@ centeredmaster(Monitor *m)
 
 	for (i = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++) {
 		if (!m->nmaster || i < m->nmaster) {
-			/* nmaster clients are stacked vertically, in the center of the screen */
-			resize(c, mx, my, mw - (2*c->bw), mh / mn - (2*c->bw), 0);
-			my += HEIGHT(c) + ih;
+			// stack vertically
+			//resize(c, mx, my, mw - (2*c->bw), mh / mn - (2*c->bw), 0);
+			//my += HEIGHT(c) + ih;
+
+			/* nmaster clients are stacked horizontally, in the center of the screen */
+			resize(c, mx, my, (mw - ((mn - 1) * iv)) / mn - (2*c->bw), mh - (2*c->bw), 0);
+			mx += WIDTH(c) + iv;
 		} else {
 			/* stack clients are stacked vertically */
 			if ((i - m->nmaster) % 2 ) {
