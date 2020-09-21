@@ -25,17 +25,42 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "home", "chat", "surf", "media", "game", "remote", "code", "database", "graphics" };
 
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     iscentered   isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,           1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,           -1 },
-	{ NULL,  	  NULL,       NULL,       0,       		1,           0,           -1 },
+	/* class      			instance    title       tags mask     iscentered   isfloating   monitor */
+	{ "Gimp",     			NULL,       NULL,       1 << 8,       0,           1,           -1 },
+	{ "Aseprite",  			NULL,       NULL,       1 << 8,       0,           0,           -1 },
+	{ "Gthumb",    			NULL,       NULL,       1 << 8,       0,           0,           -1 },
+	
+	{ "firefox",  			NULL,       NULL,       1 << 2,       0,           0,           -1 },
+	{ "Google-chrome",  	NULL,       NULL,       1 << 2,       0,           0,           -1 },
+	{ "Chromium",	  		NULL,       NULL,       1 << 2,       0,           0,           -1 },
+
+	{ "Ferdi",  			NULL,       NULL,       1 << 1,       0,           0,           -1 },
+	{ "discord", 			NULL,       NULL,       1 << 1,       0,           0,           -1 },
+	
+	{ "Steam",  			NULL,       NULL,       1 << 4,       0,           0,           -1 },
+	{ "Lutris",  			NULL,       NULL,       1 << 4,       0,           0,           -1 },
+	{ "minecraft-launcher", NULL,       NULL,       1 << 4,       0,           0,           -1 },
+	
+	{ "jetbrains-idea",  	NULL,       NULL,       1 << 6,       0,           0,           -1 },
+	{ "Code",  				NULL,       NULL,       1 << 6,       0,           0,           -1 },
+	{ "UnityHub",  			NULL,       NULL,       1 << 6,       0,           0,           -1 },
+	{ "Unity",  			NULL,       NULL,       1 << 6,       0,           0,           -1 },
+
+	{ "DBeaver",  			NULL,       NULL,       1 << 7,       0,           0,           -1 },
+	{ "sybase-isql-ISQLLoader", NULL,   NULL,       1 << 7,       0,           0,           -1 },
+	{ "com-sybase-central-viewer-SybaseCentral", NULL, NULL, 1 << 7, 0,        0,           -1 },
+
+	{ "Spotify",  			NULL,       NULL,       1 << 3,       0,           0,           -1 },
+	{ "plexmediaplayer",	NULL,       NULL,       1 << 3,       0,           0,           -1 },
+
+	{ NULL,  	  			NULL,       NULL,       0,       	  1,           0,           -1 },
 };
 
 /* layout(s) */
@@ -75,7 +100,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *roficmd[] = { "rofi", "-show", "run", NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 
 /*
  * Xresources preferences to load at startup
