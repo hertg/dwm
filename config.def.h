@@ -53,6 +53,7 @@ static const Rule rules[] = {
 	
 	{ "jetbrains-idea",  	NULL,       NULL,       1 << 6,       0,           0,           -1 },
 	{ "Code",  				NULL,       NULL,       1 << 6,       0,           0,           -1 },
+	{ "code-oss",			NULL,       NULL,       1 << 6,       0,           0,           -1 },
 	{ "UnityHub",  			NULL,       NULL,       1 << 6,       0,           0,           -1 },
 	{ "Unity",  			NULL,       NULL,       1 << 6,       0,           0,           -1 },
 
