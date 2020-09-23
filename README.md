@@ -16,6 +16,7 @@ Type=Application
 ```
 
 ## Patches
+**Official**
 - [center](https://dwm.suckless.org/patches/center/)
 - [fakefullscreen](https://dwm.suckless.org/patches/fakefullscreen/)
 - [vanitygaps](https://dwm.suckless.org/patches/vanitygaps/)
@@ -23,6 +24,10 @@ Type=Application
 - [movestack](https://dwm.suckless.org/patches/movestack/)
 - [Xresources](https://dwm.suckless.org/patches/xresources/)
 - [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
+
+**Additional**
+- Fix border transparency bug for transparent terminal windows [(attribution)](https://github.com/szatanjl/dwm/commit/1529909466206016f2101457bbf37c67195714c8)
+
 
 ## Attribution
 Some parts of the source code, mostly the vanitygaps patches for the custom layouts, 
