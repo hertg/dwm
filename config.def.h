@@ -47,9 +47,13 @@ static const Rule rules[] = {
 	{ "Steam",  			NULL,       NULL,       1 << 4,       0,           0,           -1 },
 	{ "Lutris",  			NULL,       NULL,       1 << 4,       0,           0,           -1 },
 	{ "minecraft-launcher", NULL,       NULL,       1 << 4,       0,           0,           -1 },
+
+	{ "org.remmina.Remmina",NULL,		NULL,		1 << 5,		  0,		   0,			-1 },
+	{ "Virt-manager",		NULL,		NULL,		1 << 5,		  0,		   0,			-1 },
 	
 	{ "jetbrains-idea",  	NULL,       NULL,       1 << 6,       0,           0,           -1 },
 	{ "Code",  				NULL,       NULL,       1 << 6,       0,           0,           -1 },
+	{ "code-oss",			NULL,       NULL,       1 << 6,       0,           0,           -1 },
 	{ "UnityHub",  			NULL,       NULL,       1 << 6,       0,           0,           -1 },
 	{ "Unity",  			NULL,       NULL,       1 << 6,       0,           0,           -1 },
 
