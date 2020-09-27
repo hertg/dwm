@@ -27,9 +27,11 @@ In order to display the dwm borders on Chromium/Chrome windows, right click on t
 - [movestack](https://dwm.suckless.org/patches/movestack/)
 - [Xresources](https://dwm.suckless.org/patches/xresources/)
 - [centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
+- [fancybar](https://dwm.suckless.org/patches/fancybar/)
 
 **Additional**
 - Fix border transparency bug for transparent terminal windows [(attribution)](https://github.com/szatanjl/dwm/commit/1529909466206016f2101457bbf37c67195714c8)
+- Add top/bottom padding to bar, change square to full-width line
 
 ## Keybindings
 Not all keybindings are listed here, only the ones that aren't obvious.
