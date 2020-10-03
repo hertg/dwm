@@ -37,7 +37,11 @@ static const Rule rules[] = {
 	{ "Aseprite",  			NULL,       NULL,       1 << 8,       0,           0,           -1 },
 	{ "Gthumb",    			NULL,       NULL,       1 << 8,       0,           0,           -1 },
 	
-	{ "firefox",  			NULL,       NULL,       1 << 2,       0,           0,           -1 },
+	// Explicitly setting to Navigator instance to prevent "Save As" / Picture-in-Picture 
+	// opening on the surf tag, even when the browser is used on another tag
+	{ "firefox",  			"Navigator",NULL,       1 << 2,       0,           0,           -1 },
+
+	{ "firefox",			"Toolkit", 	"Picture-in-Picture",0,	  0, 		   1,           -1 },
 	{ "Google-chrome",  	NULL,       NULL,       1 << 2,       0,           0,           -1 },
 	{ "Chromium",	  		NULL,       NULL,       1 << 2,       0,           0,           -1 },
 
@@ -64,7 +68,11 @@ static const Rule rules[] = {
 	{ "Spotify",  			NULL,       NULL,       1 << 3,       0,           0,           -1 },
 	{ "plexmediaplayer",	NULL,       NULL,       1 << 3,       0,           0,           -1 },
 
-	{ NULL,  	  			NULL,       NULL,       0,       	  1,           0,           -1 },
+	{ "St",					NULL,		NULL,		0,			  1,           0,     		-1 },
+
+	// disabled because: 
+	// adding this default rule will override iscentered / isfloating flags from other rules above
+	//{ NULL,  	  			NULL,       NULL,       0,       	  0,           0,           -1 },
 };
 
 /* layout(s) */
