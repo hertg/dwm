@@ -819,6 +819,7 @@ drawbar(Monitor *m)
 	drw_setscheme(drw, scheme[SchemeNorm]);
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
+	
 	if ((w = m->ww - tw - x) > bh) {
 		if (n > 0) {
 			tw = TEXTW(m->sel->name) + lrpad;
@@ -837,13 +838,14 @@ drawbar(Monitor *m)
 			if (i > 0)
 				mw += ew / i;
 
+			/* don't render open windows in the topbar
 			for (c = m->clients; c; c = c->next) {
 				if (!ISVISIBLE(c))
 					continue;
 				tw = MIN(m->sel == c ? w : mw, TEXTW(c->name));
 
 				drw_setscheme(drw, scheme[m->sel == c ? SchemeSel : SchemeNorm]);
-				if (tw > 0) /* trap special handling of 0 in drw_text */
+				if (tw > 0) // trap special handling of 0 in drw_text
 					//drw_text(drw, x, 0, tw, bh, lrpad / 2, c->name, 0);
 					drw_text(drw, x, 0, tw, bh, lrpad / 2, c->name, 0);
 				if (c->isfloating)
@@ -851,10 +853,12 @@ drawbar(Monitor *m)
 				x += tw;
 				w -= tw;
 			}
+			*/
 		}
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		drw_rect(drw, x, 0, w, bh, 1, 1);
 	}
+	
 	drw_map(drw, m->barwin, 0, 0, m->ww, bh);
 }
 
