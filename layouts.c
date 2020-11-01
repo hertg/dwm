@@ -207,7 +207,7 @@ centeredmaster(Monitor *m)
 	int mn = 0, ln = 0, rn = 0; // number of clients in master, left and right area
 	Client *c;
 
-	int max_window_width = 1920;
+	int max_window_width = 2200;
 	int mww = m->ww;
 
 	getgaps(m, &oh, &ov, &ih, &iv, &n);

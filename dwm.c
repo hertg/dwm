@@ -716,6 +716,12 @@ createmon(void)
 	m->lt[1] = &layouts[1 % LENGTH(layouts)];
 	strncpy(m->ltsymbol, layouts[0].symbol, sizeof m->ltsymbol);
 
+	// if screen width > 2560, 
+	// choose centeredmaster as default layout
+	if (sw > 2560) {
+		m->sellt = 1;
+	}
+
 	m->pertag = ecalloc(1, sizeof(Pertag));
 	m->pertag->curtag = m->pertag->prevtag = 1;
 
