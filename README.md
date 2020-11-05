@@ -6,7 +6,18 @@
 make clean install
 ```
 
-Create a `.desktop` file at `/usr/share/xsessions`.
+Create a `startdwm` script with the following content.
+```sh
+#!/bin/sh
+
+dwmblocks &
+
+while true; do
+    dwm &>> ~/.dwm.log
+done
+```
+
+Create a `.desktop` file at `/usr/share/xsessions` to allow choosing dwm in your display-manager.
 ```sh
 [Desktop Entry]
 Name=dwm
@@ -32,6 +43,7 @@ In order to display the dwm borders on Chromium/Chrome windows, right click on t
 **Additional**
 - Fix border transparency bug for transparent terminal windows [(attribution)](https://github.com/szatanjl/dwm/commit/1529909466206016f2101457bbf37c67195714c8)
 - Add top/bottom padding to bar, change square to full-width line
+- Choose the `centeredmaster` layout if the screensize is greater than `2560px`
 
 ## Keybindings
 Not all keybindings are listed here, only the ones that aren't obvious.
