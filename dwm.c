@@ -235,6 +235,7 @@ static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
+static void togglerecording(const Arg *arg);
 static void togglesticky(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
@@ -1833,6 +1834,20 @@ togglefloating(const Arg *arg)
 	if (selmon->sel->isfloating)
 		resize(selmon->sel, selmon->sel->x, selmon->sel->y,
 			selmon->sel->w, selmon->sel->h, 0);
+	arrange(selmon);
+}
+
+void
+togglerecording(const Arg *arg)
+{
+	if (!selmon->sel)
+		return;
+	if (!selmon->sel->isfloating)
+		selmon->sel->isfloating = 1;
+	
+	resize(selmon->sel, selmon->sel->x, selmon->sel->y,
+		1920, 1080, 0);
+		
 	arrange(selmon);
 }
 
