@@ -59,12 +59,14 @@ Not all keybindings are listed here, only the ones that aren't obvious.
 - Move active window to next screen <kbd>super + shift + ,</kbd>
 - Move active window to previous screen <kbd>super + shift + .</kbd>
 
-
 **Gaps**
 - Toggle gaps <kbd>alt + super + 0</kbd>
 - Reset gaps to default <kbd>alt + super + shift + 0</kbd>
 - Increase gaps <kbd>alt + super + h</kbd>
 - Decrease gaps <kbd>alt + super + l</kbd>
+
+**Additional Features**
+- Resize window to 1920x1080 <kbd>super + shift + r</kbd>
 
 ## Attribution
 Some parts of the source code, mostly the vanitygaps patches for the custom layouts, 
