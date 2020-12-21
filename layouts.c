@@ -207,7 +207,6 @@ centeredmaster(Monitor *m)
 	int mn = 0, ln = 0, rn = 0; // number of clients in master, left and right area
 	Client *c;
 
-	int max_window_width = 2200;
 	int mww = m->ww;
 
 	getgaps(m, &oh, &ov, &ih, &iv, &n);
@@ -228,10 +227,10 @@ centeredmaster(Monitor *m)
 	mx = m->wx + ov;
 
 	// check if all windows with max-size fill screen
-	if (n * max_window_width < m->ww) {
+	if (n * maxwindowwidth < m->ww) {
 		// if the windows don't fill the screen, center them and shrink the wrapper-width
-		mx = (MAX(m->ww - (n * max_window_width), 0) / 2) + ov;
-		mww = n * max_window_width;
+		mx = m->wx + ov + (MAX(m->ww - (n * maxwindowwidth), 0.0) / 2);
+		mww = n * maxwindowwidth;
 	} 
 	my = m->wy + oh;
 

@@ -79,6 +79,7 @@ static const Rule rules[] = {
 static float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static int nmaster     = 1;    /* number of clients in master area */
 static int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static unsigned int maxwindowwidth = 2200; 
 
 #include "layouts.c"
 static const Layout layouts[] = {
@@ -135,6 +136,7 @@ ResourcePref resources[] = {
 		{ "nmaster",          	INTEGER, &nmaster },
 		{ "resizehints",       	INTEGER, &resizehints },
 		{ "mfact",      	 	FLOAT,   &mfact },
+		{ "maxwindowwidth",     INTEGER, &maxwindowwidth },
 };
 
 #include "movestack.c"
