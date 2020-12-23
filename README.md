@@ -44,6 +44,7 @@ In order to display the dwm borders on Chromium/Chrome windows, right click on t
 - Fix border transparency bug for transparent terminal windows [(attribution)](https://github.com/szatanjl/dwm/commit/1529909466206016f2101457bbf37c67195714c8)
 - Add top/bottom padding to bar, change square to full-width line
 - Choose the `centeredmaster` layout if the screensize is greater than `2560px`
+- Implement function to resize a window to `1920x1080`. Useful for screen recording.
 
 ## Keybindings
 Not all keybindings are listed here, only the ones that aren't obvious.
@@ -66,7 +67,7 @@ Not all keybindings are listed here, only the ones that aren't obvious.
 - Decrease gaps <kbd>alt + super + l</kbd>
 
 **Additional Features**
-- Resize window to 1920x1080 <kbd>super + shift + r</kbd>
+- Resize window to `1920x1080` <kbd>super + shift + r</kbd>
 
 ## Attribution
 Some parts of the source code, mostly the vanitygaps patches for the custom layouts, 
