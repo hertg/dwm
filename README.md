@@ -1,5 +1,12 @@
 # dwm
 
+## Requirements
+To change the text in the statusbar, you need to have the `xsetroot` command available.
+
+```sh
+pacman -S xorg-xsetroot
+```
+
 ## Installation
 
 ```sh
